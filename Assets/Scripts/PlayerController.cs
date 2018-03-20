@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
     private int count;
 
+    public AudioClip pickupSound;
+    private AudioSource source;
+
 
     private void Start()
     {
@@ -19,6 +22,8 @@ public class PlayerController : MonoBehaviour {
         count = 0;
         SetCountText();
         winText.text = "";
+
+        source = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour {
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+            source.PlayOneShot(pickupSound);
         }
     }
 
