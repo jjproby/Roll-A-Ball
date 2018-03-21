@@ -828,7 +828,8 @@ MonoBehaviour:
   speed: 10
   countText: {fileID: 305384953}
   winText: {fileID: 944954815}
-  pickupSound: {fileID: 8300000, guid: 2db9f4532017aeb428ca23f198ba30df, type: 3}
+  pickupSound: {fileID: 8300000, guid: cf9a0c2fd03f1d840b1a1cf3347c9547, type: 3}
+  winSound: {fileID: 8300000, guid: 2eed9c4033cbb664eb6fe39a102fc327, type: 3}
 --- !u!54 &847746450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -919,7 +920,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2db9f4532017aeb428ca23f198ba30df, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2eed9c4033cbb664eb6fe39a102fc327, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
