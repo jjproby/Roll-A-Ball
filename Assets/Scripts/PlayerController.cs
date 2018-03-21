@@ -9,11 +9,16 @@ public class PlayerController : MonoBehaviour {
     public Text countText;
     public Text winText;
 
+
+
     private Rigidbody rb;
     private int count;
 
     public AudioClip pickupSound;
+    public AudioClip winSound;
+
     private AudioSource source;
+
 
 
     private void Start()
@@ -34,6 +39,11 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
         rb.AddForce(movement * speed);
+        if (Input.GetKeyDown("space"))
+        {
+            Vector3 jump = new Vector3(0.0f, 100.0f, 0.0f);
+            rb.AddForce(jump);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -50,9 +60,10 @@ public class PlayerController : MonoBehaviour {
     void SetCountText ()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 12)
+        if (count >= 13)
         {
             winText.text = "You Win!";
+            source.PlayOneShot(winSound);
         }
     }
 
