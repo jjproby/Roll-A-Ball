@@ -30,9 +30,9 @@ public class TrackPadMover : MonoBehaviour {
 
         if (device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad) )
         {
-            var model = this.transform.Find("Model");
-            Transform trackpad = model.Find("trackpad").Find("attach");
-            Transform touch = model.Find("trackpad_touch").Find("attach");
+            var model = this.transform.FindChild("Model");
+            Transform trackpad = model.FindChild("trackpad").FindChild("attach");
+            Transform touch = model.FindChild("trackpad_touch").FindChild("attach");
 
             Vector3 movement = (touch.position) - (trackpad.position);
             movement = new Vector3(movement.x, 0, movement.z);
